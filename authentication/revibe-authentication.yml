@@ -1,0 +1,26 @@
+generated: '2026-07-20'
+method: searched
+source: https://revibe.me/.well-known/openid-configuration
+notes: >-
+  No developer API with its own OpenAPI/securitySchemes is published. Auth surfaces
+  captured here are (1) the Shopify Customer Account OpenID Connect discovery document
+  served at the storefront, and (2) the UCP agent-profile handshake gating the hosted
+  MCP commerce endpoint (mcp/revibe-mcp.yml). Derived from live discovery docs, not a spec.
+summary:
+  types: [openIdConnect, oauth2]
+  oauth2_flows: [authorizationCode]
+schemes:
+- name: shopify-customer-account-oidc
+  type: openIdConnect
+  openIdConnectUrl: https://revibe.me/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/69517377855
+  authorization_endpoint: https://shopify.com/authentication/69517377855/oauth/authorize
+  token_endpoint: https://shopify.com/authentication/69517377855/oauth/token
+  sources: [well-known/revibe-openid-configuration.json]
+- name: ucp-agent-profile
+  type: oauth2
+  description: >-
+    Universal Commerce Protocol agent-profile handshake required before the hosted
+    MCP endpoint (https://revibe.me/api/ucp/mcp) will return tools; checkout completion
+    additionally requires contemporaneous human buyer approval.
+  sources: [well-known/revibe-ucp.json, llms/revibe-llms.txt]

@@ -1,8 +1,16 @@
 aid: revibe
 name: Revibe
-description: 'Revibe is a company surfaced as a portfolio company of partech and added to the API Evangelist
-  network as a stub for enrichment. Sector: Marketplace. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Revibe (Revibe Technology FZ-LLC) is a UAE-based e-commerce marketplace for certified
+  refurbished and renewed electronics — iPhones, Samsung phones, MacBooks, laptops, iPads,
+  TVs, and accessories — sold with a 12-month warranty, a 10-day return window, free UAE
+  delivery, and buy-now-pay-later options (Tabby, Tamara, Split). Every device passes a
+  50-point quality check and the company reports accepting only one in four supplier lots.
+  Revibe operates in the UAE (revibe.me), Saudi Arabia (sa.revibe.me), and South Africa
+  (revibe.co.za), and runs a trade-in program (sell.revibe.me). The storefront is built on
+  Shopify and natively implements the Universal Commerce Protocol (UCP, ucp.dev), exposing a
+  hosted MCP endpoint for agent-driven catalog search, cart, and human-approved checkout, plus
+  a published /llms.txt and Shopify Customer Account OpenID Connect discovery. Backed by Partech.
 url: https://raw.githubusercontent.com/api-evangelist/revibe/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -10,13 +18,44 @@ x-backed-by:
 - partech
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
+image: https://revibe.me/cdn/shop/files/revibe-logo.png
 tags:
 - Company
 - Marketplace
-apis: []
+- E-Commerce
+- Refurbished Electronics
+- Consumer Electronics
+- Retail
+- UAE
+- Agentic Commerce
+apis:
+- name: Revibe UCP Shopping (MCP)
+  description: >-
+    Agent-driven commerce surface for the Revibe Shopify store implemented via the Universal
+    Commerce Protocol (UCP). A hosted MCP endpoint exposes catalog search, cart, checkout, and
+    fulfillment tools; checkout completion requires explicit human buyer approval.
+  humanURL: https://revibe.me/llms.txt
+  baseURL: https://revibe.me/api/ucp/mcp
+  properties:
+  - type: MCPServer
+    url: mcp/revibe-mcp.yml
+  - type: Authentication
+    url: authentication/revibe-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +64,28 @@ maintainers:
 common:
 - type: Website
   url: https://revibe.me/
+- type: HelpCenter
+  url: https://help.revibe.me/
+- type: Blog
+  url: https://revibe.me/blogs/news
+- type: SignUp
+  url: https://revibe.me/account
+- type: TermsOfService
+  url: https://revibe.me/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://revibe.me/policies/privacy-policy
+- type: MCPServer
+  url: mcp/revibe-mcp.yml
+- type: Authentication
+  url: authentication/revibe-authentication.yml
+- type: LLMsTxt
+  url: llms/revibe-llms.txt
+- type: WellKnown
+  url: well-known/revibe-well-known.yml
+- type: DomainSecurity
+  url: security/revibe-domain-security.yml
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 6
+  pass: local-v1

@@ -1,0 +1,25 @@
+generated: '2026-07-20'
+method: searched
+source: https://revibe.me/.well-known/
+host: https://revibe.me
+notes: >-
+  Revibe runs on Shopify. The OIDC / OAuth authorization-server documents are the
+  Shopify Customer Account API discovery surface (issuer shopify.com/authentication/69517377855).
+  The UCP profile advertises the store's Universal Commerce Protocol (ucp.dev) agent
+  commerce surface, including the hosted MCP endpoint captured in mcp/revibe-mcp.yml.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: revibe-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: revibe-oauth-authorization-server.json
+- path: /.well-known/ucp
+  status: 200
+  file: revibe-ucp.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
