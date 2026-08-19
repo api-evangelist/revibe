@@ -2,13 +2,11 @@ generated: '2026-07-20'
 method: searched
 status: published
 source: https://revibe.me/.well-known/ucp
-notes: >-
-  Revibe is a Shopify store that natively implements the Universal Commerce Protocol
-  (UCP, https://ucp.dev). Its .well-known/ucp profile advertises a hosted MCP endpoint
-  for the dev.ucp.shopping service. tools/list requires a valid UCP agent-profile URI
-  handshake (returns error invalid_profile_url without one), so the tools below are
-  transcribed from the store's published /llms.txt agent flow and the UCP shopping MCP
-  schema (https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json), not fabricated.
+notes: Revibe is a Shopify store that natively implements the Universal Commerce Protocol (UCP, https://ucp.dev).
+  Its .well-known/ucp profile advertises a hosted MCP endpoint for the dev.ucp.shopping service. tools/list
+  requires a valid UCP agent-profile URI handshake (returns error invalid_profile_url without one), so
+  the tools below are transcribed from the store's published /llms.txt agent flow and the UCP shopping
+  MCP schema (https://ucp.dev/2026-04-08/services/shopping/mcp.openrpc.json), not fabricated.
 server:
   name: revibe-ucp-shopping
   transport: http
@@ -40,3 +38,11 @@ tools:
   description: Set shipping address and delivery method on a checkout.
 - name: complete_checkout
   description: Finalize the purchase; requires explicit human buyer payment approval.
+deployment:
+  mode: remote
+  endpoint: https://revibe.me/api/ucp/mcp
+  verified: probed
+  probe: live
+  tools: 13
+  checked: '2026-08-12'
+  source: catalog MCP census
