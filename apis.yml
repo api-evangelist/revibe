@@ -76,6 +76,9 @@ apis:
     url: mcp/revibe-mcp.yml
   - type: Authentication
     url: authentication/revibe-authentication.yml
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: ucp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
