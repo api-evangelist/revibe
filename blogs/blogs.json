@@ -2,6 +2,13 @@
   "repo": "revibe",
   "feeds": [
     {
+      "source": "https://revibe.me/blogs/news",
+      "feed_url": "https://revibe.me/blogs/posts.atom",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
       "source": "https://help.revibe.me/",
       "feed_url": "https://help.revibe.me/",
       "title": "",
@@ -10,5 +17,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
